@@ -73,11 +73,15 @@
     <string name="swipe_up_to_wake_up_title">Swipe up to wake up</string>
     <string name="swipe_up_to_wake_up_summary">Swipe up on the screen to wake up your device from idle mode</string>
 
-    <string name="gaming_title">Game Genie</string>
+    <string name="gaming_title">Game Category</string>
     <string name="gaming_browse_summary">Lunch game genie settings</string>
 
     <!-- Volume panel QS tile -->
     <string name="volume_mode">Sound</string>
     <string name="vibrate_mode">Vibrate</string>
     <string name="mute_mode">Mute</string>
+
+    <string name="asus_advanced_settings_gripsensor">AirTriggers</string>
+    <string name="grip_category_title">Lunch AirTriggers</string>
+    <string name="grip_category_summary">Settings of your Grip Sensor</string>
 </resources>
