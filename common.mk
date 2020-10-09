@@ -20,7 +20,6 @@
 # product configuration (apps).
 #
 $(call inherit-product, vendor/asus/sm8250-common/sm8250-common-vendor.mk)
-$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -82,7 +81,7 @@ PRODUCT_PACKAGES += \
 
 # DeviceParts
 PRODUCT_PACKAGES += \
-    DeviceParts \
+    #DeviceParts \
     OmniDisplayManager
 
 # Display
@@ -99,6 +98,9 @@ PRODUCT_PACKAGES += \
 # Exclude vibrator from InputManager
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vintf/manifest.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/vintf/manifest.xml
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -135,11 +137,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vendor.display.config@1.12
 
 # Remove unwanted packages
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     RemovePackages
 
 # Soong namespaces
@@ -147,7 +149,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Telephony
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -171,9 +173,6 @@ PRODUCT_PACKAGES_DEBUG += \
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
 
 # WiFi Display
 PRODUCT_PACKAGES += \

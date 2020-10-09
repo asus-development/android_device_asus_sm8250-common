@@ -1,0 +1,6 @@
+on init
+    mount none /product/overlay/EmptyProductOverlay/EmptyProductOverlay.apk /vendor/overlay/FrameworksResTarget.apk bind
+
+on post-fs
+service vendor-ozoaudio-media-c2-hal-1-0 /system/bin/true
+    disabled
