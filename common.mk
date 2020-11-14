@@ -62,6 +62,9 @@ TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
 PRODUCT_PACKAGES += \
     AntHalService
 
+PRODUCT_PACKAGES += libbluetooth_qti \
+SnapdragonCamera2
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl.recovery \
@@ -81,7 +84,7 @@ PRODUCT_PACKAGES += \
 
 # DeviceParts
 PRODUCT_PACKAGES += \
-    #DeviceParts \
+    DeviceParts \
     OmniDisplayManager
 
 # Display
@@ -142,8 +145,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
+
 # Telephony
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -151,6 +157,11 @@ PRODUCT_SOONG_NAMESPACES += \
     qti-telephony-utils \
     qti_telephony_utils.xml \
     tcmiface
+
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhwbinder
 
 # Update engine
 PRODUCT_PACKAGES += \
@@ -173,3 +184,4 @@ PRODUCT_PACKAGES += \
     libnl
 
 include vendor/qcom/opensource/display-commonsys-intf/config/display-product-system.mk
+#include vendor/qcom/opensource/commonsys-intf/bluetooth/bt-system-opensource-product.mk

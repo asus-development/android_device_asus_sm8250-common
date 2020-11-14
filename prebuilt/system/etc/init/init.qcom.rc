@@ -1,6 +1,11 @@
 on init
     mount none /product/overlay/EmptyProductOverlay/EmptyProductOverlay.apk /vendor/overlay/FrameworksResTarget.apk bind
+    mount none /product/overlay/EmptyProductOverlay/EmptyProductOverlay.apk /vendor/overlay/FrameworksResCommon.apk bind
+    mount none /product/overlay/EmptyProductOverlay/EmptyProductOverlay.apk /vendor/overlay/TelephonyResCommon.apk bind
 
 on post-fs
 service vendor-ozoaudio-media-c2-hal-1-0 /system/bin/true
+    disabled
+
+service vendor.vibrator-1-0 /system/bin/true
     disabled
